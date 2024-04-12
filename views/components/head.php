@@ -343,7 +343,7 @@
         text-align: center;
     }
     td {
-        border: 1px solid;
+        border: 2px solid;
         font-family: "Roboto", sans-serif;
         font-style: normal;
     }
@@ -409,6 +409,9 @@
         .brown_but
         {
             font-size: 15px;
+        }
+        td {
+            border: 1px solid;
         }
     }
 </style>
