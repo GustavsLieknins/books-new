@@ -45,4 +45,4 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
 
 $page_title = "Edit book ".$_GET["id"];
-auth("views/book-edit.view.php", $book, [], $errors);
+admin("views/book-edit.view.php", $book, [], $errors);

@@ -31,3 +31,14 @@ function guest($location, $errors = [])
 
 }
 
+function admin($location, $books = [], $user = [], $errors = [])
+{
+    if($_SESSION["username"] == "admin")
+    {
+        require $location;
+    }else
+    {
+        header("Location: /login");
+    }
+}
+

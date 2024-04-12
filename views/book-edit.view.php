@@ -30,10 +30,9 @@
             <input type="text" name="availability" value='<?= $_POST["availability"] ?? $books["availability"] ?>'>
             <?php if(isset($errors["availability"])){ ?>
                 <p class="invalid-data"><?= $errors["availability"] ?></p>
-            <?php } ?>
+            <?php } ?>  
         </label>
-        <button>Update!</button>
+        <button class="submit-but">Update!</button>
     </form>
-    <a href="/" class="green_but">Back!</a>
 </body>
 </html>

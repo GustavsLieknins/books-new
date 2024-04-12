@@ -155,6 +155,7 @@
         font-family: "Roboto", sans-serif;
         font-weight: 700;
         font-style: normal;
+        font-size: 50px;
         color: var(--color1);
     }
     p
@@ -181,9 +182,10 @@
     }
     .invalid-data
     {
-        position: absolute;
-        top: 100%;
-        left: 0;
+        /* position: absolute; */
+        /* top: 100%;
+        left: 0; */
+        margin-left: 10px;
         color: red;
         font-size: 0.8em;
     }
@@ -207,6 +209,7 @@
         font-weight: bold;
         font-family: "Roboto", sans-serif;
         font-style: normal;
+        font-size: 25px;
     }
     .green_but
     {
@@ -219,6 +222,7 @@
         font-weight: bold;
         font-family: "Roboto", sans-serif;
         font-style: normal;
+        font-size: 25px;
     }
     .blue_but
     {
@@ -231,6 +235,7 @@
         font-weight: bold;
         font-family: "Roboto", sans-serif;
         font-style: normal;
+        font-size: 25px;
     }
     .brown_but
     {
@@ -243,6 +248,7 @@
         font-weight: bold;
         font-family: "Roboto", sans-serif;
         font-style: normal;
+        font-size: 25px;
     }
     .form-edit
     {
@@ -279,7 +285,7 @@
         font-family: "Roboto", sans-serif;
         font-style: normal;
         text-align: center;
-        padding: 7px;
+        padding: 10px;
         border-radius: 15px;
         box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     }
@@ -297,6 +303,63 @@
         background-color: var(--color4);
         font-size: 16px;
     }
+    input
+    {
+        width: 120px;
+        height: 20px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+    label
+    {
+        font-weight: 400;
+        font-family: "Roboto", sans-serif;
+        font-style: normal;
+        font-size: 20px;
+    }
+    h1
+    {
+        text-align: center; 
+
+    }
+    form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    label {
+        text-align: center;
+        margin-left: 5px;
+    }
+    button
+    {
+        margin-bottom: 15px;
+        margin-left: 5px;
+    }
+    .div-show
+    {
+        /* width: max-con */
+        text-align: center;
+    }
+    td {
+        border: 1px solid;
+        font-family: "Roboto", sans-serif;
+        font-style: normal;
+    }
+    tr, td
+    {
+        font-size: 30px;
+        /* font-weight: 500; */
+    }
+    table {
+        border-collapse: collapse;
+        margin-bottom: 10px;
+    }
+    h2
+    {
+        font-size: 50px;
+    }
     @media (max-width: 420px) {
         nav > a
         {
@@ -308,14 +371,44 @@
             padding-right: 20px;
             height: 25px;
         }
-        tr > td
+        tr, td
         {
-            font-size: 10px;
-            font-weight: 500;
+            font-size: 13px;
+            /* font-weight: 500; */
         }
         .borrowed
         {
             font-size: 11px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        h1
+        {
+            font-size: 30px;
+        }
+        h2
+        {
+            font-size: 20px;
+        }
+            .red_but
+        {
+            font-size: 15px;
+        }
+        .green_but
+        {
+            font-size: 15px;
+        }
+        .blue_but
+        {
+            font-size: 15px;
+        }
+        .brown_but
+        {
+            font-size: 15px;
         }
     }
 </style>

@@ -1,18 +1,6 @@
 <?php $page_title = "Start"; ?>
 <?php require "views/components/head.php" ?>
 <?php require "views/components/navbar.php" ?>
-<style>
-    td {
-    border: 1px solid;
-    font-family: "Roboto", sans-serif;
-    font-style: normal;
-}
-
-table {
-  border-collapse: collapse;
-  margin-bottom: 10px;
-}
-</style>
 <body>
 <main>
 <h1>Hi, <?= $_SESSION["username"] ?>!</h1>
