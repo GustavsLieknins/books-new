@@ -16,22 +16,22 @@
         </tr>
         <?php foreach ($books as $book) { ?>
             <tr>
-                <td><a href="/show?id=<?= $book["id"] ?>">
+                <td><a href="/show?id=<?= $book["id"] . "&user=" . $_SESSION["user-id"] ?>">
                     <div class="index-cells">
                         <?= $book["name"] ?>
                     </div>
                 </a></td>
-                <td><a href="/show?id=<?= $book["id"] ?>">
+                <td><a href="/show?id=<?= $book["id"] . "&user=" . $_SESSION["user-id"] ?>">
                     <div class="index-cells">
                         <?= $book["author"] ?>
                     </div>
                 </a></td>
-                <td><a href="/show?id=<?= $book["id"] ?>">
+                <td><a href="/show?id=<?= $book["id"] . "&user=" . $_SESSION["user-id"]  ?>">
                     <div class="index-cells">
                         <?= $book["release_date"] ?>
                     </div>
                 </a></td>
-                <td><a href="/show?id=<?= $book["id"] ?>">
+                <td><a href="/show?id=<?= $book["id"] . "&user=" . $_SESSION["user-id"]  ?>">
                     <div class="index-cells">
                         <?= $book["availability"] ?>
                     </div>

@@ -20,8 +20,8 @@ $config = require "config.php";
     $params = [":user_id" => $user["id"], ":name" => $book["name"]];
     $borrowed_books = $db->execute($query, $params)->fetch();
 
-    if($borrowed_books == false)
-    {
+    // if($borrowed_books == false)
+    // {
         $query = "INSERT INTO 
         borrowed_books (name, return_date, book_id, user_id) 
         VALUE 
@@ -34,10 +34,11 @@ $config = require "config.php";
         $params = [":id" => $_GET["id"]];
         $db->execute($query, $params);
         header("Location: /");
-    }else
-    {
-        $errors["borrow"] = "You already have this book!";
-        header("Location: /show?id=".$_GET["id"]."&error=true");
-    }
+    // }
+    // else
+    // {
+    //     $errors["borrow"] = "You already have this book!";
+    //     header("Location: /show?id=".$_GET["id"]."&error=true");
+    // }
 
     $page_title = "Borrowing";

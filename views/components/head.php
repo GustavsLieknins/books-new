@@ -36,7 +36,7 @@
         background-color: var(--color2);
         padding-left: 50px;
         padding-right: 50px;
-        height: 35px;
+        height: 45px;
     }
     a 
     {
@@ -81,6 +81,7 @@
     {
         font-family: "Roboto", sans-serif;
         padding: 0;
+        font-size: 30px;
     }
     .div-for-input-divs
     {

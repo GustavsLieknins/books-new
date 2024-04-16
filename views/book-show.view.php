@@ -8,7 +8,7 @@
     <a href="<?= "/edit?id=".$books["id"] ?>" class="blue_but">Edit</a>
 <?php }?>
 <a href="/" class="green_but">Back</a>
-<?php if(isset($_GET["error"])){ ?>
+<?php if(isset($errors["borrow"])){ ?>
     <a href="/return?id=<?= $books["id"] ?>" class="brown_but">Return!</a>
 <?php }else{ ?>
     <a href="/borrow?id=<?= $books["id"] ?>" class="brown_but">Borrow</a>
@@ -17,5 +17,6 @@
     <a href="<?= "/delete?id=".$books["id"] ?>" class="red_but">Delete</a>
 <?php }?>
 </div>
+
 </body>
 </html>
