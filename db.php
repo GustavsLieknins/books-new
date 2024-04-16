@@ -7,7 +7,8 @@ CREATE TABLE books (
 	name VARCHAR(155) NOT NULL,
 	author VARCHAR(155) NOT NULL,
 	release_date date NOT NULL,
-	availability INT NOT NULL
+	availability INT NOT NULL,
+	picture VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE user (

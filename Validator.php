@@ -50,4 +50,24 @@ class Validator
         }
 
     }
+
+    public static function picture($picture) {
+        if (!isset($picture) || empty($picture)) {
+            $errors['picture'] = 'No picture selected.';
+            return false;
+        }
+
+        $allowedTypes = ['image/jpeg', 'image/png'];
+        if (!in_array($picture['type'], $allowedTypes)) {
+            $errors['picture'] = 'Invalid file type. Only JPEG and PNG files are allowed.';
+            return false;
+        }
+
+        if ($picture['size'] > 5 * 1024 * 1024) {
+            $errors['picture'] = 'File size exceeds the limit of 5MB.';
+            return false;
+        }
+
+        return true;
+    }
 }

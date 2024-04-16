@@ -12,6 +12,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     $bookAuthor = $_POST["author"];
     $bookReleaseDate = $_POST["releaseDate"];
     $bookAvailability = $_POST["availability"];
+    $bookPicture = $_POST["picture"];
     if(!Validator::string($bookName, min_len: 1, max_len: 255))
     {
         $errors["name"] = "Name cannot be empty or too long";
@@ -28,15 +29,32 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     {
         $errors["availability"] = "Cannot be empty or not a number";  
     } 
+    // if(!Validator::picture($bookPicture))
+    // {
+    //     $errors["picture"] = "Invalid file type. Only JPEG and PNG files are allowed.";
+    // }
     if(empty($errors))
     {
+
+
+
+        $target_dir = "views/img/";
+        $target_file = $target_dir . basename($_FILES["picture"]["name"]);
+        if (move_uploaded_file($_FILES["picture"]["tmp_name"], $target_file)) {
+        } else {
+            $errors["picture"] = "Sorry, there was an error uploading your file.";
+        }
+        
         $query = "INSERT INTO 
-        books (name, author, release_date, availability) 
+        books (name, author, release_date, availability, picture) 
         VALUE 
-        (:name, :author, :releaseDate, :availability );";
-        $params = [":name" => $bookName, ":author" => $bookAuthor, ":releaseDate" => $bookReleaseDate, ":availability" => $bookAvailability];
+        (:name, :author, :releaseDate, :availability, :picture);";
+        $params = [":name" => $bookName, ":author" => $bookAuthor, ":releaseDate" => $bookReleaseDate, ":availability" => $bookAvailability, ":picture" => $target_file];
         $db = new DataBase($config);
         $books = $db->execute($query, $params)->fetchALL();
+
+
+
         header("Location: /");
         die();
     }

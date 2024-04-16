@@ -337,7 +337,10 @@
     }
     label {
         text-align: center;
-        margin-left: 5px;
+        margin-right: 10px;
+        margin-left: 10px;
+        width: min-content;
+        line-height: 25px;
     }
     button
     {
@@ -346,8 +349,39 @@
     }
     .div-show
     {
-        /* width: max-con */
         text-align: center;
+        align-items: center;
+    }
+    .div-btns
+    {
+        position: relative;
+        /* width: 100vw; */
+        height: min-content;
+        margin-left: 200px;
+    }
+
+    .div-book-show
+    {
+        position: relative;
+        width: 100%;
+        height: min-content;
+    }
+    .div-book-show > h1
+    {
+        /* position: absolute; */
+        left: 0;
+        margin-left: 200px;
+    }
+    .div-book-show > img
+    {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    .img-show
+    {
+        width: 200px;
+        height: 300px;
     }
     td {
         border: 2px solid;
@@ -423,6 +457,19 @@
         a
         {
             text-decoration: 1px underline var(--color3);
+        }
+        .img-show
+        {
+            width: 100px;
+            height: 150px;
+        }
+        .div-btns
+        {
+            margin-left: 100px;
+        }
+        .div-book-show > h1
+        {
+            margin-left: 100px;
         }
     }
 </style>
