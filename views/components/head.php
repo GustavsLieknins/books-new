@@ -40,7 +40,7 @@
     }
     a 
     {
-        all: unset;
+        /* all: unset; */
         cursor: pointer;
         /* font-family: "Whisper", cursive; */
     }
@@ -272,6 +272,12 @@
         /* margin-left: 5px; */
         margin-right: 5px;
     }
+    a
+    {
+        text-decoration: 2.3px underline var(--color3);
+        color: var(--text);
+
+    }
     th
     {
         padding-left: 5px;
@@ -412,6 +418,10 @@
         }
         td {
             border: 1px solid;
+        }
+        a
+        {
+            text-decoration: 1px underline var(--color3);
         }
     }
 </style>

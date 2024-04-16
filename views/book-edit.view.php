@@ -5,7 +5,7 @@
     <h1><?= $books["name"] . " by " . $books["author"] ?></h1>
     <form method="POST" class="form-edit">
         <label>
-            Edit name:
+            Edit title:
             <input type="text" name="name" value='<?= $_POST["name"] ?? $books["name"] ?>'>
             <?php if(isset($errors["name"])){ ?>
                 <p class="invalid-data"><?= $errors["name"] ?></p>
