@@ -16,37 +16,17 @@
             <th>Availability:</th> -->
         <!-- </tr> -->
         <?php foreach ($books as $book) { ?>
-            <div class="book-card">
-                <a href="/show?id=<?= $book['id'] ?>&user=<?= $_SESSION['user-id'] ?>">
-                    <div class="div-text-index">
-                        <img src="<?= $book['picture'] ?>" alt="Book Cover" class="pic-index">
-                        <p class="book-name"><?= $book['name'] ?></p>
+            <div>
+            <a href="/show?id=<?= $book['id'] ?>&user=<?= $_SESSION['user-id'] ?>">
+                <div class="book-card">
+                        <div class="div-text-index">
+                            <img src="<?= $book['picture'] ?>" alt="Book Cover" class="pic-index">
+                            <p class="book-name"><?= $book['name'] ?></p>
+                        </div>
                         <p>Click on card</p>
-                    </div>
-                </a>
+                </div>
+            </a>
             </div>
-            <!-- <tr>
-                <td><a href="/show?id=<?= $book["id"] . "&user=" . $_SESSION["user-id"] ?>">
-                    <div class="index-cells">
-                        <?= $book["name"] ?>
-                    </div>
-                </a></td>
-                <td><a href="/show?id=<?= $book["id"] . "&user=" . $_SESSION["user-id"] ?>">
-                    <div class="index-cells">
-                        <?= $book["author"] ?>
-                    </div>
-                </a></td>
-                <td><a href="/show?id=<?= $book["id"] . "&user=" . $_SESSION["user-id"]  ?>">
-                    <div class="index-cells">
-                        <?= $book["release_date"] ?>
-                    </div>
-                </a></td>
-                <td><a href="/show?id=<?= $book["id"] . "&user=" . $_SESSION["user-id"]  ?>">
-                    <div class="index-cells">
-                        <?= $book["availability"] ?>
-                    </div>
-                </a></td>
-            </tr> -->
         <?php } ?>
         </div>
     <!-- </table> -->

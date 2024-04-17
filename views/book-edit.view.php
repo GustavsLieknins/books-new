@@ -5,28 +5,28 @@
     <h1><?= $books["name"] . " by " . $books["author"] ?></h1>
     <form method="POST" class="form-edit">
         <label>
-            Edit title:
+            Title:
             <input type="text" name="name" value='<?= $_POST["name"] ?? $books["name"] ?>'>
             <?php if(isset($errors["name"])){ ?>
                 <p class="invalid-data"><?= $errors["name"] ?></p>
             <?php } ?>
         </label>
         <label>
-            Edit author:
+            Author:
             <input type="text" name="author" value='<?= $_POST["author"] ?? $books["author"] ?>'>
             <?php if(isset($errors["author"])){ ?>
                 <p class="invalid-data"><?= $errors["author"] ?></p>
             <?php } ?>
         </label>
         <label>
-            Edit release date:
+            Release date:
             <input type="text" name="releaseDate" value='<?= $_POST["releaseDate"] ?? $books["release_date"] ?>'>
             <?php if(isset($errors["releaseDate"])){ ?>
                 <p class="invalid-data"><?= $errors["releaseDate"] ?></p>
             <?php } ?>
         </label>
         <label>
-            Edit availability:
+            Availability:
             <input type="text" name="availability" value='<?= $_POST["availability"] ?? $books["availability"] ?>'>
             <?php if(isset($errors["availability"])){ ?>
                 <p class="invalid-data"><?= $errors["availability"] ?></p>
