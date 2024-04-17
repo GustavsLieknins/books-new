@@ -4,18 +4,28 @@
 <body>
 <main>
 <h1>Hi, <?= $_SESSION["username"] ?>!</h1>
-<div class="div-index">
-    <h2>Books we have available:</h2>
+    <div class="div-cards">
+<!-- <div class="div-index"> -->
+    <!-- <h2>Books we have available:</h2> -->
     <!-- <?= $books ?> -->
-    <table>
-        <tr>
+    <!-- <table> -->
+        <!-- <tr>
             <th>Title:</th>
             <th>Author:</th>
             <th>Release Date:</th>
-            <th>Availability:</th>
-        </tr>
+            <th>Availability:</th> -->
+        <!-- </tr> -->
         <?php foreach ($books as $book) { ?>
-            <tr>
+            <div class="book-card">
+                <a href="/show?id=<?= $book['id'] ?>&user=<?= $_SESSION['user-id'] ?>">
+                    <div class="div-text-index">
+                        <img src="<?= $book['picture'] ?>" alt="Book Cover" class="pic-index">
+                        <p class="book-name"><?= $book['name'] ?></p>
+                        <p>Click on card</p>
+                    </div>
+                </a>
+            </div>
+            <!-- <tr>
                 <td><a href="/show?id=<?= $book["id"] . "&user=" . $_SESSION["user-id"] ?>">
                     <div class="index-cells">
                         <?= $book["name"] ?>
@@ -36,10 +46,11 @@
                         <?= $book["availability"] ?>
                     </div>
                 </a></td>
-            </tr>
+            </tr> -->
         <?php } ?>
-    </table>
-</div>
+        </div>
+    <!-- </table> -->
+<!-- </div> -->
 </main>
 </body>
 </html>

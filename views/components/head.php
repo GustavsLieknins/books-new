@@ -275,7 +275,9 @@
     }
     a
     {
-        text-decoration: 2.3px underline var(--color3);
+        /* text-decoration: 2.3px underline var(--color3); */
+        all: unset;
+        cursor: pointer;
         color: var(--text);
 
     }
@@ -357,7 +359,7 @@
         position: relative;
         /* width: 100vw; */
         height: min-content;
-        margin-left: 200px;
+        margin-left: 300px;
     }
 
     .div-book-show
@@ -370,18 +372,20 @@
     {
         /* position: absolute; */
         left: 0;
-        margin-left: 200px;
+        margin-left: 300px;
     }
     .div-book-show > img
     {
         position: absolute;
         left: 0;
         top: 0;
+        border: 2px solid black;
+        border-radius: 5px;
     }
     .img-show
     {
-        width: 200px;
-        height: 300px;
+        width: 300px;
+        height: 400px;
     }
     td {
         border: 2px solid;
@@ -400,6 +404,52 @@
     h2
     {
         font-size: 50px;
+    }
+    .book-card
+    {
+        /* display: grid; */
+        width: 250px;
+        background-color: var(--color2);
+        padding-bottom: 10px;
+        border-radius: 15px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        margin: 20px;
+        justify-content: center;
+        height: 350px;
+    }
+    .book-card > a > p
+    {
+        color: var(--text);
+        text-align: center;
+    }
+    .book-card > a
+    {
+        /* display: flex; */
+        justify-content: center;
+        height: 350px;
+    }
+    .pic-index
+    {
+        width: 250px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+
+    }
+    .div-cards
+    {
+        display: flex;
+        flex-direction: row;
+        /* align-items: center; */
+        
+    }
+    .book-name
+    {
+        font-size: 20px;
+    }
+    .div-text-index
+    {
+        display: flex;
+
     }
     @media (max-width: 420px) {
         nav > a
@@ -454,10 +504,10 @@
         td {
             border: 1px solid;
         }
-        a
+        /* a
         {
             text-decoration: 1px underline var(--color3);
-        }
+        } */
         .img-show
         {
             width: 100px;
@@ -465,11 +515,11 @@
         }
         .div-btns
         {
-            margin-left: 100px;
+            margin-left: 104px;
         }
         .div-book-show > h1
         {
-            margin-left: 100px;
+            margin-left: 104px;
         }
     }
 </style>
