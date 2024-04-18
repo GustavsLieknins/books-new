@@ -7,7 +7,7 @@
     <form action="/login" method="POST">
     <label>
         Username:
-        <input type="text" name="username">
+        <input type="text" name="username" style="<?= isset($errors["login"]) ? "border: 1px solid red" : "" ?>">
         <?php if(isset($errors["login"])){ ?>
             <p class="invalid-data"><?= $errors["login"] ?></p>
         <?php } ?>
@@ -15,7 +15,7 @@
     
     <label>
         Password:
-        <input type="password" name="password">     
+        <input type="password" name="password" style="<?= isset($errors["login"]) ? "border: 1px solid red" : "" ?>" >     
     </label>
     <button>Login!</button>
     </form>

@@ -7,14 +7,14 @@
     <form action="/register" method="POST">
         <label>
             Username:
-            <input type="text" name="username">
+            <input type="text" name="username" style="<?= isset($errors["register"]) ? "border: 1px solid red" : "" ?>">
             <?php if(isset($errors["register"])){ ?>
                 <p class="invalid-data"><?= $errors["register"] ?></p>
             <?php } ?>
         </label>
         <label>
             Password:
-            <input type="password" name="password">
+            <input type="password" name="password"style="<?= isset($errors["register"]) ? "border: 1px solid red" : "" ?>" >
         </label>
         <button>Register!</button>
     </form>

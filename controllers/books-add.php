@@ -29,10 +29,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     {
         $errors["availability"] = "Cannot be empty or not a number";  
     } 
-    // if(!Validator::picture($_POST["picture"]))
-    // {
-    //     $errors["picture"] = "Invalid file type. Only JPEG and PNG files are allowed.";
-    // }
+        // if(!Validator::picture($_POST["picture"]))
+        // {
+        //     $errors["picture"] = "Invalid file type. Only JPEG and PNG files are allowed.";
+        // }
     if(empty($errors))
     {
 
@@ -42,7 +42,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         $target_file = $target_dir . basename($_FILES["picture"]["name"]);
         if (move_uploaded_file($_FILES["picture"]["tmp_name"], $target_file)) {
         } else {
-            $errors["picture"] = "Sorry, there was an error uploading your file.";
+            $target_file = "views/img/cat.jpg";
         }
         
         $query = "INSERT INTO 
@@ -55,7 +55,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
 
 
-        header("Location: /");
+        header("Location: /addbooks");
         die();
     }
 }

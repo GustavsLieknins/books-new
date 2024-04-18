@@ -41,6 +41,15 @@
         </label>
         <button class="submit-but">Add</button>
     </form>
+
+
+    <form method="POST" enctype="multipart/form-data">
+            <input type="text" name="name" value="Cat's life" style="display: none">
+            <input type="text" name="author" value='Gustavs' style="display: none">
+            <input type="text" name="releaseDate" value='2024-01-01' style="display: none">
+            <input type="text" name="availability" value='2' style="display: none">
+            <button class="submit-but" style="background-color: red; color: var(--text)">Add placeholder book</button>
+    </form>
 </main>
 </body>
 </html>

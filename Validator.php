@@ -70,4 +70,21 @@ class Validator
 
         return true;
     }
+    
+    static public function password($data)
+    {
+        // $pattern = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/'; 
+        // minimum length should be 8.
+        // at least one uppercase letter.
+        // at least one lowercase letter.
+        // at least one digits, and
+        // at least one special character.
+  
+        if (preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/', $data)) { 
+            return true; 
+        } else { 
+            return false;
+        } 
+        
+    }
 }

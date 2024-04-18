@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/views/img/book-logo.png">
     <title><?= $page_title ?></title>
     <style>
     :root
@@ -180,7 +181,7 @@
     }
     .invalid-data
     {
-        /* position: absolute; */
+        position: absolute;
         /* top: 100%;
         left: 0; */
         margin-left: 10px;
@@ -350,6 +351,8 @@
     {
         text-align: center;
         align-items: center;
+        height: 90vh;
+        /* overflow: hidden; */
     }
     .div-btns
     {
@@ -382,9 +385,10 @@
     .img-show
     {
         width: 500px;
-        height: 500px;
         object-fit: cover;
         box-shadow: 0px 30px 30px rgba(255, 149, 5, 0.1);
+        /* overflow: hidden; */
+        height: 90vh;
     }
     td {
         border: 2px solid;
