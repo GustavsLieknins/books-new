@@ -5,6 +5,7 @@
 <div class="div-show">
     <div class="div-book-show">
         <h1>Great book '<?= $books["name"] ?>' writen by <?= $books["author"] ?> and released on <?= $books["release_date"] ?></h1>
+        <h1>Availability: <?= $books["availability"] ?></h1>
         <img src="<?= $books["picture"] ?>"  class="img-show">
     </div>
     <div class="div-btns">

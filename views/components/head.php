@@ -116,10 +116,6 @@
         font-weight: 400;
         font-style: normal;
     }
-    .dropdown-input
-    {
-
-    }
     .submit-numbered-index
     {
         width: 120px;
@@ -360,7 +356,7 @@
         position: relative;
         /* width: 100vw; */
         height: min-content;
-        margin-left: 310px;
+        margin-left: 510px;
     }
 
     .div-book-show
@@ -373,7 +369,7 @@
     {
         /* position: absolute; */
         left: 0;
-        margin-left: 310px;
+        margin-left: 510px;
     }
     .div-book-show > img
     {
@@ -385,9 +381,10 @@
     }
     .img-show
     {
-        width: 300px;
-        height: 400px;
+        width: 500px;
+        height: 500px;
         object-fit: cover;
+        box-shadow: 0px 30px 30px rgba(255, 149, 5, 0.1);
     }
     td {
         border: 2px solid;
@@ -422,8 +419,15 @@
         height: 350px;
         position: relative;
         text-align: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position:center;
+        transition: transform 0.3s; 
+    }
+    .book-card
+    {
+        background-image: blur(3px);
 
-        transition: transform 0.3s;
     }
     .book-card:hover
     {
@@ -448,11 +452,16 @@
     .pic-index
     {
         width: 250px;
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
+        border-radius: 15px;
         height: 350px;
         object-fit: cover;
-        filter: blur(2px);
+        position: absolute;
+        top: 0;
+        width: 200px;
+        height: 200px;
+        margin-top: 20px;
+        box-shadow: 0px 30px 30px rgba(255, 149, 5, 0.1);
+        /* filter: blur(2px); */
 
     }
     .div-cards
@@ -467,6 +476,8 @@
     .book-name
     {
         font-size: 20px;
+        z-index: 6;
+        margin-top: 235px;
     }
     .div-text-index
     {
@@ -475,6 +486,86 @@
         text-align: center;
         flex-direction: column;
 
+    }
+    .pagination-item
+    {
+        color: var(--text);
+        font-size: 35px;
+        text-align: center;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-left: 1px;
+        margin-right: 1px;
+        background-color: var(--color1);
+        border-radius: 5px;
+        height: 40px;   
+        font-family: "Roboto", sans-serif;
+        font-style: normal;
+    }
+    .pagination-item-active
+    {
+        color: red;
+    }
+    .pagination-item-dots
+    {
+        margin-bottom: 10px;
+    }
+    .pagination
+    {
+        display: flex;
+    }
+    .select-page-s
+    {
+        margin: 0;
+        margin-bottom: 5px;
+        font-size: 18px;
+    }
+    .dropdown-input
+    {
+        margin-left: 10px;
+        height: 40px;
+        /* width: 50px; */
+        background-color: var(--color1);
+        color: var(--text);
+        border: 0px;
+        border-radius: 5px;
+        font-size: 30px;
+
+    }
+
+    .book-availability
+    {
+        position: absolute;
+        top: -30px;
+        left: 0;
+        background-color: orange;
+        border-radius: 20px;
+    }
+    .book-availability > p
+    {
+        margin: 10px;   
+        font-size: 17px;
+        color:  black;
+        font-weight: bold;
+    }
+    #book-availability-alert
+    {
+        color: red;
+        animation: pulse 0.9s infinite;
+    }
+
+    @keyframes pulse {
+	0% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0.5;
+	}
+
+	100% {
+		opacity: 1;
+	}
     }
     @media (max-width: 420px) {
         nav > a

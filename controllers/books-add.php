@@ -12,7 +12,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     $bookAuthor = $_POST["author"];
     $bookReleaseDate = $_POST["releaseDate"];
     $bookAvailability = $_POST["availability"];
-    $bookPicture = $_POST["picture"];
+    // $bookPicture = $_POST["picture"];
     if(!Validator::string($bookName, min_len: 1, max_len: 255))
     {
         $errors["name"] = "Name cannot be empty or too long";
@@ -29,7 +29,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     {
         $errors["availability"] = "Cannot be empty or not a number";  
     } 
-    // if(!Validator::picture($bookPicture))
+    // if(!Validator::picture($_POST["picture"]))
     // {
     //     $errors["picture"] = "Invalid file type. Only JPEG and PNG files are allowed.";
     // }

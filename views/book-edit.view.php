@@ -3,7 +3,7 @@
 <?php require "views/components/navbar.php" ?>
     <h1>Edit book here</h1>
     <h1><?= $books["name"] . " by " . $books["author"] ?></h1>
-    <form method="POST" class="form-edit">
+    <form method="POST" class="form-edit" enctype="multipart/form-data">
         <label>
             Title:
             <input type="text" name="name" value='<?= $_POST["name"] ?? $books["name"] ?>'>
@@ -31,6 +31,13 @@
             <?php if(isset($errors["availability"])){ ?>
                 <p class="invalid-data"><?= $errors["availability"] ?></p>
             <?php } ?>  
+        </label>
+        <label>
+            Cover photo:
+            <input type="file" name="picture">
+            <?php if(isset($errors["picture"])){ ?>
+                <p class="invalid-data"><?= $errors["picture"] ?></p>
+            <?php } ?>
         </label>
         <button class="submit-but">Update</button>
     </form>

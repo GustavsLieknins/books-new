@@ -34,8 +34,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     } 
     if(empty($errors))
     {
-        $query = "UPDATE books SET name = :name, author = :author, release_date = :release_date, availability = :availability  WHERE id = :id";
-        $params = [":name" => $bookName, ":author" => $bookAuthor, ":release_date" => $bookReleaseDate, ":availability" => $bookAvailability, ":id" => $_GET["id"]];
+        $target_dir = "views/img/";
+        $target_file = $target_dir . basename($_FILES["picture"]["name"]);
+        if (move_uploaded_file($_FILES["picture"]["tmp_name"], $target_file)) {
+        } else {
+            $errors["picture"] = "Sorry, there was an error uploading your file.";
+        }
+
+        $query = "UPDATE books SET name = :name, author = :author, release_date = :release_date, availability = :availability, picture = :picture  WHERE id = :id";
+        $params = [":name" => $bookName, ":author" => $bookAuthor, ":release_date" => $bookReleaseDate, ":availability" => $bookAvailability, ":id" => $_GET["id"], ":picture" => $target_file];
         // $db = new Database($config);
         $books = $db->execute($query, $params)->fetch();
         header("Location: /");
