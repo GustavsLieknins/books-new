@@ -4,9 +4,9 @@
 <body>
 <main>
 <h1>Hi, <?= $_SESSION["username"] ?>!</h1>
+    <h2>Books we have available:</h2>
     <div class="div-cards">
 <!-- <div class="div-index"> -->
-    <!-- <h2>Books we have available:</h2> -->
     <!-- <?= $books ?> -->
     <!-- <table> -->
         <!-- <tr>
@@ -23,6 +23,7 @@
                             <img src="<?= $book['picture'] ?>" alt="Book Cover" class="pic-index">
                             <p class="book-name"><?= $book['name'] ?></p>
                         </div>
+                        
                         <p>Click on card</p>
                 </div>
             </a>

@@ -387,6 +387,7 @@
     {
         width: 300px;
         height: 400px;
+        object-fit: cover;
     }
     td {
         border: 2px solid;
@@ -404,7 +405,9 @@
     }
     h2
     {
-        font-size: 50px;
+        font-size: 40px;
+        font-family: "Roboto", sans-serif;
+        color: var(--color1);
     }
     .book-card
     {
@@ -447,7 +450,9 @@
         width: 250px;
         border-top-left-radius: 15px;
         border-top-right-radius: 15px;
-        height: 175px;
+        height: 350px;
+        object-fit: cover;
+        filter: blur(2px);
 
     }
     .div-cards
