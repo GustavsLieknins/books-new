@@ -2,6 +2,7 @@
 
 require "Database.php";
 $config = require "config.php";
+require "Validator.php";
 
 $errors = [];
 if($_SERVER["REQUEST_METHOD"] == "POST")

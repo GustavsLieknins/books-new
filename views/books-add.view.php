@@ -3,37 +3,37 @@
 <?php require "views/components/navbar.php" ?>
 <main>
     <h1>Add books here</h1>
-    <form method="POST" enctype="multipart/form-data">
-    <label>
-            Title:
-            <input type="text" name="name" value='<?= $_POST["name"] ?? "" ?>'>
+    <form method="POST" enctype="multipart/form-data" class="form-for-inputs">
+    <label >
+            Title
+            <input type="text" name="name" value='<?= $_POST["name"] ?? "" ?>' class="form-inputs">
             <?php if(isset($errors["name"])){ ?>
                 <p class="invalid-data"><?= $errors["name"] ?></p>
             <?php } ?>
         </label>
         <label>
-            Author:
-            <input type="text" name="author" value='<?= $_POST["author"] ?? "" ?>'>
+            Author
+            <input type="text" name="author" value='<?= $_POST["author"] ?? "" ?>' class="form-inputs">
             <?php if(isset($errors["author"])){ ?>
                 <p class="invalid-data"><?= $errors["author"] ?></p>
             <?php } ?>
         </label>
         <label>
-            Release date:
-            <input type="text" name="releaseDate" value='<?= $_POST["releaseDate"] ?? "" ?>'>
+            Release date
+            <input type="text" name="releaseDate" value='<?= $_POST["releaseDate"] ?? "" ?>' class="form-inputs">
             <?php if(isset($errors["releaseDate"])){ ?>
                 <p class="invalid-data"><?= $errors["releaseDate"] ?></p>
             <?php } ?>
         </label>
         <label>
-            Availability:
-            <input type="text" name="availability" value='<?= $_POST["availability"] ?? "" ?>'>
+            Availability
+            <input type="text" name="availability" value='<?= $_POST["availability"] ?? "" ?>' class="form-inputs">
             <?php if(isset($errors["availability"])){ ?>
                 <p class="invalid-data"><?= $errors["availability"] ?></p>
             <?php } ?>
         </label>
         <label>
-            Cover photo:
+            Cover photo
             <input type="file" name="picture">
             <?php if(isset($errors["picture"])){ ?>
                 <p class="invalid-data"><?= $errors["picture"] ?></p>

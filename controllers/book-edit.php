@@ -34,11 +34,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     } 
     if(empty($errors))
     {
+        $query = "SELECT * FROM books WHERE id = :id"; 
+        $params = [":id" => $_GET["id"]];
+        $book = $db->execute($query, $params)->fetch();
+
         $target_dir = "views/img/";
         $target_file = $target_dir . basename($_FILES["picture"]["name"]);
         if (move_uploaded_file($_FILES["picture"]["tmp_name"], $target_file)) {
         } else {
-            $errors["picture"] = "Sorry, there was an error uploading your file.";
+            $target_file = $book["picture"];
+        }
+
+        if($target_file === "views/img/")
+        {
+            $target_file = $book["picture"];
         }
 
         $query = "UPDATE books SET name = :name, author = :author, release_date = :release_date, availability = :availability, picture = :picture  WHERE id = :id";

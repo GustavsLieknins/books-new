@@ -58,7 +58,7 @@
                 </a>
             <?php } ?>
             <div class="dropdown-input-div">
-            <form>
+            <form class="form-page-switch">
                 <select name='perPage' class="dropdown-input" onchange="this.form.submit();">
                     <option value='5' <?= (isset($_GET["perPage"]) && $_GET["perPage"] == 5 || isset($_SESSION["perPage"]) && $_SESSION["perPage"] == 5 ? "selected" : '') ?> >5</option>
                     <option value='10' <?= (isset($_GET["perPage"]) && $_GET["perPage"] == 10 || isset($_SESSION["perPage"]) && $_SESSION["perPage"] == 10  ? "selected" : '') ?> >10</option>

@@ -21,6 +21,10 @@
      /* --color5: #494D5F; */
      --text: #e5eaf5;    
     }
+
+
+
+
     header 
     {
         position: fixed;
@@ -330,7 +334,7 @@
         text-align: center; 
 
     }
-    form {
+    .form-page-switch {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -501,7 +505,7 @@
         margin-left: 1px;
         margin-right: 1px;
         background-color: var(--color1);
-        border-radius: 5px;
+        border-radius: 3px;
         height: 40px;   
         font-family: "Roboto", sans-serif;
         font-style: normal;
@@ -558,6 +562,47 @@
         animation: pulse 0.9s infinite;
     }
 
+
+    .form-for-inputs
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 10px;
+        border: 1px solid var(--color1);
+        width: min-content;
+        border-radius: 15px;
+        padding-top: 20px;
+        align-items: center;
+        background-color: var(--color1);
+        color: var(--text);
+    }
+    label
+    {
+        margin-bottom: 10px;
+    }
+    .form-inputs
+    {
+        width: 200px;
+        height: 30px;
+        border-radius: 15px;
+        border: 0px solid black;
+        background-color: var(--color2);
+        padding-left: 10px;
+        padding-right: 10px;
+        color: var(--text);
+    }
+    .form-inputs:focus
+    {
+        outline: none;
+    }
+    label
+    {
+        text-align: start;
+        padding: 10px;
+        padding-top: 0px;
+    }
     @keyframes pulse {
 	0% {
 		opacity: 1;
