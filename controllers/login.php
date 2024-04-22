@@ -31,7 +31,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
             $_SESSION["user"] = true;
             $_SESSION["admin"] = $user["admin"] ?? false;
-            $_SESSION["username"] = $_POST["username"];
+            $_SESSION["username"] = ucfirst($_POST["username"]);
             $_SESSION["user-id"] = $user["id"];
             echo "Welcome!";
             header("Location: /");

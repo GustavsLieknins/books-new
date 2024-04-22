@@ -12,8 +12,8 @@ if(!isset($_SESSION["user"]) || $_SESSION["user"] == false)
     echo '<header>
         <nav>
             <a href="/">Start</a>
-            <a href="/borrowedBooks?id=' . $_SESSION["user-id"] . '">Borrowed books</a>
-            <a href="/logout">Logout!</a>
+            <a href="/borrowedBooks?id=' . $_SESSION["user-id"] . '" class="user-but"><img src="views/img/user2.svg" alt="Logo" class="logo">' . $_SESSION["username"] . '</a>
+            <a href="/logout" class="logout-but">Logout</a>
         </nav>
     </header>'; 
 }else
@@ -22,8 +22,8 @@ if(!isset($_SESSION["user"]) || $_SESSION["user"] == false)
         <nav>
             <a href="/">Start</a>
             <a href="/addbooks">Add books</a>
-            <a href="/borrowedBooks?id=' . $_SESSION["user-id"] . '">Borrowed books</a>
-            <a href="/logout">Logout!</a>
+            <a href="/borrowedBooks?id=' . $_SESSION["user-id"] . '" class="user-but"><img src="views/img/user2.svg" alt="Logo" class="logo">' . $_SESSION["username"] . '</a>
+            <a href="/logout" class="logout-but">Logout</a>
         </nav>
 </header>';
 }

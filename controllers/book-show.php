@@ -42,4 +42,4 @@ if($book == true)
 // var_dump($books);
 
 
-auth("views/book-show.view.php", $books, $book, $errors);
+admin("views/book-show.view.php", $books, $book, $errors);

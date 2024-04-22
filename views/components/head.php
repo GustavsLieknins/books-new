@@ -37,12 +37,13 @@
     {
         display: flex;
         /* flex-direction: row; */
-        justify-content: space-between;
+        /* justify-content: space-between; */
         align-items: center;
         background-color: var(--color2);
         padding-left: 50px;
         padding-right: 50px;
         height: 45px;
+        position: relative;
     }
     a 
     {
@@ -53,10 +54,49 @@
     nav > a
     {
         all: unset;
-        font-family: "Whisper", cursive;
-        font-size: 40px;
+        font-family: "Roboto", sans-serif;
+        font-size: 35px;
         cursor: pointer;
-        color: var(--text);
+        color: var(--color4);
+        font-weight: bold;
+        /* color: var(--text); */
+        transition: all 0.3s;
+        padding-left: 10px;
+        padding-right: 10px;
+        /* background-color: red; */
+        border-left: 4px solid black;
+        height: 45px;
+    }
+
+    nav > a:hover
+    {
+        color: var(--color3);
+        transition: all 0.3s;
+    }
+    .logo
+    {
+        margin-left: 20px;
+        border-left: 4px solid black;
+        height: 45px;
+    }
+    .user-but
+    {
+        display: flex;
+        flex-direction: row;
+    }
+    .user-but
+    {
+        
+        border-left: 0px;
+        padding-left: 0px;
+    }
+    .logout-but
+    {
+        position: absolute;
+        right: 0px;
+        margin-right: 20px;
+        border-left: 0px;
+        border-right: 4px solid black;
     }
     main 
     {

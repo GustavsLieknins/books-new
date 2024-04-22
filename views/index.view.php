@@ -3,7 +3,6 @@
 <?php require "views/components/navbar.php" ?>
 <body>
 <main>
-<h1>Hi, <?= $_SESSION["username"] ?>!</h1>
     <h2>Books we have available</h2>
 
     <div class="div-cards">
