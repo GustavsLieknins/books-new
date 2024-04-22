@@ -5,11 +5,11 @@
 <div class="div-show">
     <div class="div-book-show">
         <h1>Great book '<?= $books["name"] ?>' writen by <?= $books["author"] ?> and released on <?= $books["release_date"] ?></h1>
-        <h1>Availability: <?= $books["availability"] ?></h1>
+        <h2>Availability: <?= $books["availability"] ?></h2>
         <img src="<?= $books["picture"] ?>"  class="img-show">
     </div>
     <div class="div-btns">
-        <?php if($_SESSION["username"] == "admin"){ ?>
+        <?php if($_SESSION["admin"] == 1){ ?>
             <a href="<?= "/edit?id=".$books["id"] ?>" class="blue_but">Edit</a>
         <?php }?>
         <a href="/" class="green_but">Back</a>
@@ -18,7 +18,7 @@
         <?php }else{ ?>
             <a href="/borrow?id=<?= $books["id"] ?>" class="brown_but">Borrow</a>
         <?php } ?>
-        <?php if($_SESSION["username"] == "admin"){ ?>
+        <?php if($_SESSION["admin"] == 1){ ?>
             <a href="<?= "/delete?id=".$books["id"] ?>" class="red_but">Delete</a>
         <?php }?>
     </div>

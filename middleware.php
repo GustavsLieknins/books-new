@@ -33,7 +33,7 @@ function guest($location, $errors = [])
 
 function admin($location, $books = [], $user = [], $errors = [])
 {
-    if($_SESSION["username"] == "admin")
+    if($_SESSION["admin"] === 1)
     {
         require $location;
     }else

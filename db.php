@@ -14,7 +14,8 @@ CREATE TABLE books (
 CREATE TABLE user (
 	id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	username VARCHAR(155) NOT NULL,
-	password VARCHAR(155) NOT NULL
+	password VARCHAR(155) NOT NULL,
+	admin BOOLEAN
 );
 
 CREATE TABLE borrowed_books (

@@ -185,10 +185,11 @@
     }
     .invalid-data
     {
-        position: absolute;
+        /* position: absolute; */
         /* top: 100%;
         left: 0; */
         margin-left: 10px;
+        margin-bottom: 0px;
         color: red;
         font-size: 0.8em;
     }
@@ -275,13 +276,35 @@
         /* margin-left: 5px; */
         margin-right: 5px;
     }
-    a
+    .page-numbers
     {
         /* text-decoration: 2.3px underline var(--color3); */
         all: unset;
         cursor: pointer;
         color: var(--text);
+        text-decoration:none;
+        /* underline: 0px; */
 
+    }
+    .form-guest
+    {
+        margin: 0;
+        all: unset;
+        cursor: pointer;
+        color: var(--color2);
+        text-decoration:none;
+    }
+    .form-guest > p
+    {
+
+        margin: 0;
+    }
+    .card-a
+    {
+        all: unset;
+        cursor: pointer;
+        color: var(--text);
+        text-decoration:none;  
     }
     th
     {
@@ -300,7 +323,7 @@
         border-radius: 15px;
         box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     }
-    button
+    .submit-but
     {
         text-decoration: none;
         margin-top: 17px;
@@ -313,6 +336,14 @@
         font-style: normal;
         background-color: var(--color4);
         font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+    .submit-but:hover
+    {
+        color: var(--color3);
+        background-color: var(--color2);
+        transition: all 0.3s;
     }
     input
     {
@@ -346,16 +377,18 @@
         width: min-content;
         line-height: 25px;
     }
-    button
+    .submit-but
     {
         margin-bottom: 15px;
         margin-left: 5px;
     }
     .div-show
     {
+        display: flex;
         text-align: center;
         align-items: center;
         height: 90vh;
+        flex-direction: column;
         /* overflow: hidden; */
     }
     .div-btns
@@ -373,6 +406,12 @@
         height: min-content;
     }
     .div-book-show > h1
+    {
+        /* position: absolute; */
+        left: 0;
+        margin-left: 510px;
+    }
+    .div-book-show > h2
     {
         /* position: absolute; */
         left: 0;
@@ -577,10 +616,11 @@
         align-items: center;
         background-color: var(--color1);
         color: var(--text);
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     }
     label
     {
-        margin-bottom: 10px;
+       margin-bottom: 10px;
     }
     .form-inputs
     {

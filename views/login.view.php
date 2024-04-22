@@ -17,12 +17,12 @@
         Password:
         <input type="password" name="password" style="<?= isset($errors["login"]) ? "border: 1px solid red" : "" ?>"  class="form-inputs">     
     </label>
-    <button>Login!</button>
+    <button class="submit-but">Login!</button>
     </form>
 
 
     <p>Dont have an account?</p>
-    <a href="/register"><p>Register!</p></a>
+    <a href="/register" class="form-guest"><p>Register!</p></a>
 </main>
 
 </body>

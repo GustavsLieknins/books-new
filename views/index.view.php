@@ -7,11 +7,10 @@
     <h2>Books we have available</h2>
 
     <div class="div-cards">
-    
 
         <?php foreach ($books[0] as $book){ ?>
             <div>
-            <a href="/show?id=<?= $book['id'] ?>&user=<?= $_SESSION['user-id'] ?>">
+                <a href="<?= $_SESSION["admin"] === 1 ? "/show?id=" . $book['id'] . "&user=" . $_SESSION['user-id'] : "/borrow?id=" . $book['id'] ?>" class="card-a">
                 <div class="book-card">
                         <div class="book-availability "><p id='<?= $book['availability'] == 1 ? "book-availability-alert" : "" ?>' >Books left <?= $book['availability'] ?></p></div>
                         <img src="<?= $book['picture'] ?>" alt="Book Cover" class="pic-index">
@@ -21,7 +20,7 @@
                         </div>
                         <p>Click on card</p>
                 </div>
-            </a>
+                </a>
             </div>
         <?php } ?>
         </div>
@@ -29,7 +28,7 @@
     <p class="select-page-s">Select page</p>
     <div class="pagination">
             <?php if($books[1] > 1){ ?>
-                <a href="/?page=1">
+                <a href="/?page=1" class="page-numbers">
                     <div class="pagination-item">1</div>
                 </a>
                 <div class="pagination-item pagination-item-dots">...</div>
@@ -41,7 +40,7 @@
                         <?= $i ?>
                     </div>
                 <?php }else{ ?>
-                    <a href="/?page=<?= $i ?>">
+                    <a href="/?page=<?= $i ?>" class="page-numbers">
                         <div class="pagination-item">
                             <?= $i ?>
                         </div>
@@ -51,7 +50,7 @@
 
             <?php if($books[1] < $books[2]){ ?>
                 <div class="pagination-item pagination-item-dots">...</div>
-                <a href="/?page=<?= $books[2] ?>">
+                <a href="/?page=<?= $books[2] ?>" class="page-numbers">
                     <div class="pagination-item">
                         <?= $books[2] ?>
                     </div>

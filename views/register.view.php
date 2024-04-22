@@ -8,8 +8,8 @@
         <label>
             Username:
             <input type="text" name="username" style="<?= isset($errors["username"]) ? "border: 1px solid red" : "" ?>" class="form-inputs">
-            <?php if(isset($errors["username"])){ ?>
-                <p class="invalid-data"><?= $errors["username"] ?></p>
+            <?php if(isset($errors["register"])){ ?>
+                <p class="invalid-data"><?= $errors["register"] ?></p>
             <?php } ?>
         </label>
         <label>
@@ -19,10 +19,10 @@
                 <p class="invalid-data"><?= $errors["password"] ?></p>
             <?php } ?>
         </label>
-        <button>Register!</button>
+        <button class="submit-but">Register!</button>
     </form>
     <p>Already have an account?</p>
-    <a href="/login"><p>Login!</p></a>
+    <a href="/login"  class="form-guest"><p>Login!</p></a>
     </main>
 </body>
 </html>

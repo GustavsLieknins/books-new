@@ -7,7 +7,7 @@ if(!isset($_SESSION["user"]) || $_SESSION["user"] == false)
             <a href="/register">Register</a>
         </nav>
     </header>';
-}else if($_SESSION["username"] != "admin" )
+}else if($_SESSION["admin"] === false )
 {
     echo '<header>
         <nav>

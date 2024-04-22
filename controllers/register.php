@@ -43,6 +43,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         $errors["register"] = "You already have an account!";
     }else if(empty($errors))
     {
+    
+        $password = password_hash($password, PASSWORD_DEFAULT);
         $query = "INSERT INTO 
         user (username, password) 
         VALUE 
@@ -51,6 +53,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         $db = new DataBase($config);
         $posts = $db->execute($query, $params)->fetchALL();
         header("Location: /");
+        
     }
 }
 
