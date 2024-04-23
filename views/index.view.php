@@ -2,13 +2,26 @@
 <?php require "views/components/head.php" ?>
 <?php require "views/components/navbar.php" ?>
 <body>
-<main>
+<main class="main-index">
+    <!-- <div> <?php echo "<pre>" ?> -->
+        <!-- <p>You already have book   foreach ($books[0] as $book) {  $book["id"] === $_GET["id"] ?? ""   };  ?></p> -->
+    <!-- </div> -->
+    <!-- <div style= isset($_GET["name"]) ? "border: 1px solid red" : "" ?>" class="error-div">
+        <p>You already have <?= $_GET["name"] ?? "" ?></p>
+    </div> -->
+
+    <?= isset($_GET["name"]) ? "
+    <div class='error-message'>
+        <span class='error-text'>You already have " .  $_GET["name"] . "</span>
+    </div>" : "" ?>
+ 
     <h2>Books we have available</h2>
 
     <div class="div-cards">
 
         <?php foreach ($books[0] as $book){ ?>
             <div>
+                <!-- <a href="<?= $book["id"] === $_GET["id"] ? "/return?id=" .  $book["id"] : ($_SESSION["admin"] === 1 ? "/show?id=" . $book['id'] . "&user=" . $_SESSION['user-id'] : "/borrow?id=" . $book['id']) ?>" class="card-a"> -->
                 <a href="<?= $_SESSION["admin"] === 1 ? "/show?id=" . $book['id'] . "&user=" . $_SESSION['user-id'] : "/borrow?id=" . $book['id'] ?>" class="card-a">
                 <div class="book-card">
                         <div class="book-availability "><p id='<?= $book['availability'] == 1 ? "book-availability-alert" : "" ?>' >Books left <?= $book['availability'] ?></p></div>

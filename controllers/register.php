@@ -23,7 +23,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     }
     if(!Validator::string($password, min_len: 1, max_len: 255))
     {
-        $errors["password"] = "Password cannot be empty or too long";
+        $errors["password"] = "Password invalid";
     }
 
     $query = "SELECT * FROM user WHERE username = :username AND password = :password";
@@ -37,10 +37,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     $result2 = $db->execute($query, $params)->fetch();
     if($result1 != false)
     {
-        $errors["register"] = "You already have an account!";
+        $errors["username"] = "You already have an account!";
     }else if($result2 != false)
     {
-        $errors["register"] = "You already have an account!";
+        $errors["username"] = "You already have an account!";
+    }else if($_POST["username"] === "" && $_POST["password"] === "")
+    {
+        $errors["username"] = "Email empty";
+        $errors["password"] = "Password empty";
+    }else if($_POST["password"] !== $_POST["password-rep"])
+    {
+        $errors["password-rep"] = "Password does not match";
+        $errors["password"] = "";
     }else if(empty($errors))
     {
     

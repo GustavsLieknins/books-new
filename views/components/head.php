@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="/views/img/book-logo.png">
+    <script src="script.js"></script>
     <title><?= $page_title ?></title>
     <style>
     :root
@@ -75,9 +76,11 @@
     }
     .logo
     {
-        margin-left: 20px;
+        padding-left: 5px;
         border-left: 4px solid black;
-        height: 45px;
+        height: 35px;
+        padding-bottom: 5px;
+        padding-top: 5px;
     }
     .user-but
     {
@@ -107,6 +110,12 @@
         position: relative;
         align-items: center;
         flex-direction: column;
+        /* overflow-x: hidden; */
+    }
+    .main-index
+    {
+        overflow: hidden;
+        height: 100%;
     }
     body
     {
@@ -682,6 +691,70 @@
         text-align: start;
         padding: 10px;
         padding-top: 0px;
+    }
+    .error-div
+    {
+        display: block;
+
+        padding: 15px;
+        background-color: red;
+        border-radius: 10px;
+
+    }
+    .error-div > p
+    {
+        font-size: 20px;
+        font-weight: bold;
+        color: var(--color3);
+    }
+
+    .error-message {
+        display: block;
+        opacity: 0;
+        position: absolute;
+        background-color: #fce4e4;
+        border: 1px solid #fcc2c3;
+        float: left;
+        padding: 20px 30px;
+        right: 0px;
+
+  animation-name: div-anima;
+  animation-duration: 4s;
+    }
+
+    .error-text {
+        color: #cc0033;
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 20px;
+        text-shadow: 1px 1px rgba(250,250,250,.3);
+    }
+    @keyframes div-anima {
+	0% {
+        opacity: 1;
+		display: block;
+        transform: translate(200px);
+        overflow: hidden;
+	}
+
+	20% {
+		transform: translate(0px);
+	}
+
+	80% {
+        transform: translate(0px);
+	}
+    99% {
+
+        opacity: 1;
+        transform: translate(200px);
+    }
+    100%{
+        transform: translate(200px);
+        opacity: 0;
+        overflow: hidden;
+    }
     }
     @keyframes pulse {
 	0% {

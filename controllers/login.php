@@ -21,7 +21,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     $params = [":username" => $_POST["username"]];
     $user = $db->execute($query, $params)->fetch();
 
-    if(!password_verify($_POST["password"], $user["password"]))
+    if(!password_verify($_POST["password"] ?? "", $user["password"] ?? ""))
     {
         $errors["login"] = "Parole vai e-pasts nav pareiz";
     }

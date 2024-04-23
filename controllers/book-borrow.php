@@ -16,17 +16,17 @@ $config = require "config.php";
     $params = [":id" => $_GET["id"]];
     $book = $db->execute($query, $params)->fetch();
 
-    $query = "SELECT * FROM borrowed_books WHERE user_id = :user_id AND name = :name"; 
-    $params = [":user_id" => $user["id"], ":name" => $book["name"]];
+    $query = "SELECT * FROM borrowed_books WHERE user_id = :user_id AND book_id = :book_id"; 
+    $params = [":user_id" => $user["id"], ":book_id" => $_GET["id"]];
     $borrowed_books = $db->execute($query, $params)->fetch();
 
-    // if($borrowed_books == false)
-    // {
+    if($borrowed_books == false)
+    {
         $query = "INSERT INTO 
         borrowed_books (name, return_date, book_id, user_id) 
         VALUE 
         (:name, :return_date, :book_id , :user_id);"; 
-        $params = [":name" => $book["name"], ":return_date" => $date->format("Y-m-d H:i:s"), ":book_id" => $book["id"], ":user_id" => $user["id"]];
+        $params = [":name" => $book["name"], ":return_date" => $date->format("Y-m-d H:i:s"), ":book_id" => $_GET["id"], ":user_id" => $user["id"]];
         $db = new DataBase($config);
         $db->execute($query, $params)->fetch();
     
@@ -34,11 +34,11 @@ $config = require "config.php";
         $params = [":id" => $_GET["id"]];
         $db->execute($query, $params);
         header("Location: /");
-    // }
-    // else
-    // {
-    //     $errors["borrow"] = "You already have this book!";
-    //     header("Location: /show?id=".$_GET["id"]."&error=true");
-    // }
+    }
+    else
+    {
+        $errors["borrow"] = "You already have this book!";
+        header("Location: /?id=".$_GET["id"]."&error=true"."&name=".$book["name"]);
+    }
 
     $page_title = "Borrowing";
