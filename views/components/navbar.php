@@ -3,8 +3,8 @@ if(!isset($_SESSION["user"]) || $_SESSION["user"] == false)
 {
     echo '<header>
         <nav>
-            <a href="/login">Login</a>
-            <a href="/register">Register</a>
+            <a href="/login" class="start-but">Login</a>
+            <a href="/register" class="start-but">Register</a>
             <div><a href="/" class="user-but logo-text"><img src="views/img/book-logo.png" alt="Logo" class="nav-logo">Freaky bookshop</a></div> 
         </nav>
     </header>';
