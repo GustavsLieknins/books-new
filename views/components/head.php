@@ -40,11 +40,13 @@
         /* flex-direction: row; */
         /* justify-content: space-between; */
         align-items: center;
-        background-color: var(--color2);
+        background-color: black;
         padding-left: 50px;
         padding-right: 50px;
-        height: 45px;
+        height: 55px;
         position: relative;
+        text-align: center;
+        align-items: center;
     }
     a 
     {
@@ -56,40 +58,87 @@
     {
         all: unset;
         font-family: "Roboto", sans-serif;
-        font-size: 35px;
+        font-size: 25px;
         cursor: pointer;
         color: var(--color4);
-        font-weight: bold;
+        /* font-weight: bold; */
         /* color: var(--text); */
         transition: all 0.3s;
         padding-left: 10px;
         padding-right: 10px;
         /* background-color: red; */
-        border-left: 4px solid black;
-        height: 45px;
+        border-left: 3px solid var(--color4);
+        /* height: 45px; */
+        line-height: 55px;
+        transition: all 0.3s;
     }
-
     nav > a:hover
     {
         color: var(--color3);
+    }
+    .start-but:hover
+    {
+        border-left: 3px solid var(--color3);
+    }
+    .logo-text
+    {
+        font-family:"Papyrus", Fantasy;
+        font-weight: bold;
+        text-align: center;
+    }
+    .nav-logo
+    {
+        /* padding-left: 5px; */
+        
+        height: 55px;
+        /* padding-bottom: 10px; */
+        /* padding-top: 10px; */
+        justify-content: center;
+    }
+    nav >div
+    {
+        display: flex;
+        width: 100%;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15vw;
+    }
+    nav > div >a
+    {
+        all: unset;
+        /* font-family: "Roboto", sans-serif; */
+        font-size: 30px;
+        cursor: pointer;
+        color: var(--color4);
+        /* font-weight: bold; */
+        /* color: var(--text); */
+        transition: all 0.3s;
+        padding-left: 10px;
+        padding-right: 10px;
+        /* background-color: red; */
+        border-left: 3px solid var(--color4);
+        /* height: 45px; */
+        line-height: 55px;
         transition: all 0.3s;
     }
     .logo
     {
         padding-left: 5px;
-        border-left: 4px solid black;
-        height: 35px;
-        padding-bottom: 5px;
-        padding-top: 5px;
+        border-left: 3px solid var(--color4);
+        height: 30px;
+        padding-bottom: 12.5px;
+        padding-top: 12.5px;
+        transition: all 0.3s;
+    }
+    .user-but:hover > .logo
+    {
+        border-left: 3px solid var(--color3);
     }
     .user-but
     {
         display: flex;
         flex-direction: row;
-    }
-    .user-but
-    {
-        
         border-left: 0px;
         padding-left: 0px;
     }
@@ -99,7 +148,12 @@
         right: 0px;
         margin-right: 20px;
         border-left: 0px;
-        border-right: 4px solid black;
+        border-right: 3px solid var(--color4);
+        transition: all 0.3s;
+    }
+    .logout-but:hover
+    {
+        border-right: 3px solid var(--color3);
     }
     main 
     {
@@ -634,7 +688,7 @@
         position: absolute;
         top: -30px;
         left: 0;
-        background-color: orange;
+        background-color: var(--color3);
         border-radius: 20px;
     }
     .book-availability > p
@@ -717,6 +771,7 @@
         float: left;
         padding: 20px 30px;
         right: 0px;
+        margin-top: 10px;
 
   animation-name: div-anima;
   animation-duration: 4s;
@@ -768,6 +823,36 @@
 	100% {
 		opacity: 1;
 	}
+    }
+    @media (max-width: 740px) {
+        .logo-text
+        {
+          font-size:  20px;
+        } 
+    }
+    @media (max-width: 650px) {
+        .logo-text
+        {
+          font-size:  15px;
+        } 
+        .nav-logo
+        {
+            height: 45px;
+            line-height: 45px;
+            padding-top: 5px;
+        }
+    }
+    @media (max-width: 590px) {
+        .logo-text
+        {
+          font-size:  15px;
+        } 
+        .nav-logo
+        {
+            padding-top: 10px;
+            height: 35px;
+            line-height: 45px;
+        }
     }
     @media (max-width: 420px) {
         nav > a

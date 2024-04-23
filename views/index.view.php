@@ -30,7 +30,7 @@
                             <p class="book-name">"<?= $book['name'] ?>"</p>
                             <p class="book-author">Written by <?= $book['author'] ?></p>
                         </div>
-                        <p>Click on card</p>
+                        <p>Click to borrow</p>
                 </div>
                 </a>
             </div>
