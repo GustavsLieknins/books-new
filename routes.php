@@ -12,5 +12,6 @@ $routes = [
     "/edit" => "controllers/book-edit.php",
     "/borrowedBooks" => "controllers/book-borrowed.php",
     "/borrow" => "controllers/book-borrow.php",
-    "/return" => "controllers/book-return.php"
+    "/return" => "controllers/book-return.php",
+    "/addauthors" => "controllers/book-addauthors.php"
 ];

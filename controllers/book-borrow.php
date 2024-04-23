@@ -20,6 +20,8 @@ $config = require "config.php";
     $params = [":user_id" => $user["id"], ":book_id" => $_GET["id"]];
     $borrowed_books = $db->execute($query, $params)->fetch();
 
+
+
     if($borrowed_books == false)
     {
         $query = "INSERT INTO 
