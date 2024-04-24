@@ -28,7 +28,10 @@
                         <img src="<?= $book['picture'] ?>" alt="Book Cover" class="pic-index">
                         <div class="div-text-index">
                             <p class="book-name">"<?= $book['name'] ?>"</p>
-                            <p class="book-author">Written by <?= $book['author'] ?></p>
+                            <?php foreach ($books[4] as $author){ ?>
+                                <?= $author["id"] === $book['author'] ? "<p class='book-author'>Written by " . $author["name"] . "</p>" : "" ?>
+
+                            <?php } ?>
                         </div>
                         <p>Click to borrow</p>
                 </div>

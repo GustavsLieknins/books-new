@@ -2,10 +2,10 @@ CREATE DATABASE book_lieknins;
 
 USE book_lieknins;
 
-<!-- CREATE TABLE authors (
+CREATE TABLE authors (
 	id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
 	name VARCHAR(155) NOT NULL
-); -->
+);
 
 CREATE TABLE books (
 	id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,

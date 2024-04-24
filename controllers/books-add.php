@@ -37,6 +37,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     {
 
 
+        $query = "SELECT * FROM authors WHERE id = :id"; 
+        $params = [":id" => $bookAuthor];
+        $db = new DataBase($config);
+        $author = $db->execute($query, $params)->fetch();
 
         $target_dir = "views/img/";
         $target_file = $target_dir . basename($_FILES["picture"]["name"]);
@@ -49,7 +53,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         books (name, author, release_date, availability, picture) 
         VALUE 
         (:name, :author, :releaseDate, :availability, :picture);";
-        $params = [":name" => $bookName, ":author" => $bookAuthor, ":releaseDate" => $bookReleaseDate, ":availability" => $bookAvailability, ":picture" => $target_file];
+        $params = [":name" => $bookName, ":author" => $author["id"], ":releaseDate" => $bookReleaseDate, ":availability" => $bookAvailability, ":picture" => $target_file];
         $db = new DataBase($config);
         $books = $db->execute($query, $params)->fetchALL();
 
