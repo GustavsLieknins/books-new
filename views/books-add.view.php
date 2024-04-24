@@ -13,17 +13,15 @@
         </label>
         <label>
             Author
-            <!-- <input type="text" name="author" value='<?= $_POST["author"] ?? "" ?>' class="form-inputs">
+            <select name='author' class="book-add-select">
+                <option value='-1'>Select one below</option>
+                <?php foreach ($books as $author) { ?>
+                    <option value='<?= $author["id"] ?>' <?= (isset($_POST["author"]) && $_POST["author"] == $author["id"] ? "selected" : '') ?> ><?= $author["name"] ?></option>
+                <?php } ?>
+            </select>
             <?php if(isset($errors["author"])){ ?>
                 <p class="invalid-data"><?= $errors["author"] ?></p>
-            <?php } ?> -->
-
-
-            <select name='category' class="dropdown-input" >
-                <option value='sport' <?= (isset($_GET["category"]) && $_GET["category"] == 'sport' ? "selected" : '') ?> >Sport</option>
-                <option value='music' <?= (isset($_GET["category"]) && $_GET["category"] == 'music' ? "selected" : '') ?> >Music</option>
-                <option value='food'  <?= (isset($_GET["category"]) && $_GET["category"] == 'food' ? "selected" : '') ?> >Food</option>
-            </select>
+            <?php } ?>
         </label>
 
 
@@ -31,7 +29,7 @@
 
         <label>
             Release date
-            <input type="text" name="releaseDate" value='<?= $_POST["releaseDate"] ?? "" ?>' class="form-inputs">
+            <input type="date" name="releaseDate" value='<?= $_POST["releaseDate"] ?? "" ?>' class="form-inputs">
             <?php if(isset($errors["releaseDate"])){ ?>
                 <p class="invalid-data"><?= $errors["releaseDate"] ?></p>
             <?php } ?>

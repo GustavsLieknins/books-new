@@ -9,6 +9,18 @@ $query = "SELECT * FROM books WHERE id = :id";
 $params = [":id" => $_GET["id"]];
 $db = new Database($config);
 $book = $db->execute($query, $params)->fetch();
+
+$query = "SELECT * FROM authors"; 
+$params = [];
+$db = new DataBase($config);
+$authors = $db->execute($query, $params)->fetchAll();
+
+$query = "SELECT * FROM authors WHERE id = :id"; 
+$params = [":id" => $book["id"]];
+$db = new DataBase($config);
+$author = $db->execute($query, $params)->fetch();
+
+
 $errors = [];
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
@@ -61,4 +73,4 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
 
 $page_title = "Edit book ".$_GET["id"];
-admin("views/book-edit.view.php", $book, [], $errors);
+admin("views/book-edit.view.php", $book = [$book, $authors, $author], [], $errors);

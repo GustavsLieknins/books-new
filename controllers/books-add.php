@@ -6,6 +6,14 @@ $config = require "config.php";
 
 $errors = [];
 $books = [];
+
+$query = "SELECT * FROM authors"; 
+$params = [];
+$db = new DataBase($config);
+$authors = $db->execute($query, $params)->fetchAll();
+
+
+
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
     $bookName = $_POST["name"];
@@ -15,19 +23,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     // $bookPicture = $_POST["picture"];
     if(!Validator::string($bookName, min_len: 1, max_len: 255))
     {
-        $errors["name"] = "Name cannot be empty or too long";
+        $errors["name"] = "Name invalid";
     }
-    if(!Validator::string($bookAuthor, min_len: 1, max_len: 255))
+    if($bookAuthor === -1)
     {
-        $errors["author"] = "Author cannot be empty or too long";
+        $errors["author"] = "Author invalid";
+    }else if(!Validator::number($bookAuthor))
+    {
+        $errors["author"] = "Author invalid";
     }
     if(!Validator::date($bookReleaseDate))
     {
-        $errors["releaseDate"] = "Not valid or not correct format YYYY-MM-DD";  
+        $errors["releaseDate"] = "Release Date invalid";  
     } 
     if(!Validator::number($bookAvailability))
     {
-        $errors["availability"] = "Cannot be empty or not a number";  
+        $errors["availability"] = "Availability invalid";  
     } 
         // if(!Validator::picture($_POST["picture"]))
         // {
@@ -64,4 +75,4 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     }
 }
 
-admin("views/books-add.view.php", $books, [], $errors);
+admin("views/books-add.view.php", $authors, [], $errors);

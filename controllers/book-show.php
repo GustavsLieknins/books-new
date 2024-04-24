@@ -11,6 +11,10 @@ $params = [":id" => $_GET["id"]];
 $db = new DataBase($config);
 $books = $db->execute($query, $params)->fetch();
 
+$query = "SELECT * FROM authors WHERE id = :id"; 
+$params = [":id" => $books["id"]];
+$db = new DataBase($config);
+$author = $db->execute($query, $params)->fetch();
 
 $query = "SELECT * FROM borrowed_books WHERE user_id = :user_id AND book_id = :book_id"; 
 $params = [":user_id" => $_GET["user"], ":book_id" => $_GET["id"]];
@@ -42,4 +46,4 @@ if($book == true)
 // var_dump($books);
 
 
-admin("views/book-show.view.php", $books, $book, $errors);
+admin("views/book-show.view.php", $books = [$books, $author], $book, $errors);
