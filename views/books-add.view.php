@@ -23,10 +23,6 @@
                 <p class="invalid-data"><?= $errors["author"] ?></p>
             <?php } ?>
         </label>
-
-
-
-
         <label>
             Release date
             <input type="date" name="releaseDate" value='<?= $_POST["releaseDate"] ?? "" ?>' class="form-inputs">
@@ -41,9 +37,9 @@
                 <p class="invalid-data"><?= $errors["availability"] ?></p>
             <?php } ?>
         </label>
-        <label>
-            Cover photo
-            <input type="file" name="picture">
+        <label class="inputFileLabel">
+            Cover photo:
+            <input type="file" name="picture" class="inputFile">
             <?php if(isset($errors["picture"])){ ?>
                 <p class="invalid-data"><?= $errors["picture"] ?></p>
             <?php } ?>
@@ -57,7 +53,7 @@
             <input type="text" name="author" value='2' style="display: none">
             <input type="text" name="releaseDate" value='2024-01-01' style="display: none">
             <input type="text" name="availability" value='2' style="display: none">
-            <button class="submit-but" style="background-color: red; color: var(--text)">Add placeholder book</button>
+            <button class="submit-but">Add placeholder book</button>
     </form>
     <p>Dont see an author?</p>
     <a href="/addauthors" class="form-guest"><p>Create author!</p></a>

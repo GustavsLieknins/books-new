@@ -38,8 +38,9 @@
                 <p class="invalid-data"><?= $errors["availability"] ?></p>
             <?php } ?>
         </label>
+        <label class="inputFileLabel">
             Cover photo:
-            <input type="file" name="picture">
+            <input type="file" name="picture" class="inputFile">
             <?php if(isset($errors["picture"])){ ?>
                 <p class="invalid-data"><?= $errors["picture"] ?></p>
             <?php } ?>
