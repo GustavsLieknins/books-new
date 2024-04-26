@@ -12,7 +12,7 @@ $db = new DataBase($config);
 $books = $db->execute($query, $params)->fetch();
 
 $query = "SELECT * FROM authors WHERE id = :id"; 
-$params = [":id" => $books["id"]];
+$params = [":id" => $books["author"]];
 $db = new DataBase($config);
 $author = $db->execute($query, $params)->fetch();
 

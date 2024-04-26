@@ -16,7 +16,7 @@ $db = new DataBase($config);
 $authors = $db->execute($query, $params)->fetchAll();
 
 $query = "SELECT * FROM authors WHERE id = :id"; 
-$params = [":id" => $book["id"]];
+$params = [":id" => $book["author"]];
 $db = new DataBase($config);
 $author = $db->execute($query, $params)->fetch();
 
