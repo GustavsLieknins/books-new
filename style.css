@@ -817,6 +817,28 @@
         line-height: 20px;
         text-shadow: 1px 1px rgba(250,250,250,.3);
     }
+
+    .bookAdded
+    {
+        display: none;
+
+        color: green;
+
+        animation-name: bookAdded-anima;
+        animation-duration: 4s;
+    }
+
+    @keyframes bookAdded-anima {
+        0% {
+            display: block;
+        }
+    
+        100%{
+            
+            display: none;
+        }
+        }
+
     @keyframes div-anima {
 	0% {
         opacity: 1;

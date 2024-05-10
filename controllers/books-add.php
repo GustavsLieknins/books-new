@@ -20,7 +20,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     $bookAuthor = $_POST["author"];
     $bookReleaseDate = $_POST["releaseDate"];
     $bookAvailability = $_POST["availability"];
-    // $bookPicture = $_POST["picture"];
     if(!Validator::string($bookName, min_len: 1, max_len: 255))
     {
         $errors["name"] = "Name invalid";
@@ -40,10 +39,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     {
         $errors["availability"] = "Availability invalid";  
     } 
-        // if(!Validator::picture($_POST["picture"]))
-        // {
-        //     $errors["picture"] = "Invalid file type. Only JPEG and PNG files are allowed.";
-        // }
     if(empty($errors))
     {
 
@@ -70,9 +65,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
 
 
+        // $books = ["book-change" => "book added"];
+
+
+        $_SESSION['book_added'] = true;
+
         header("Location: /addbooks");
+
+
+
         die();
     }
 }
 
-admin("views/books-add.view.php", $authors, [], $errors);
+
+admin("views/books-add.view.php", $authors, $books, $errors);
+
+
+
+// admin("views/books-add.view.php", $books = ["book-change" => "book added"], [], $errors);

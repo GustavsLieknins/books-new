@@ -2,9 +2,17 @@
 <?php require "views/components/head.php" ?>
 <?php require "views/components/navbar.php" ?>
 <main>
+<?php
+if (isset($_SESSION['book_added']) && $_SESSION['book_added']) {
+    echo "<p class=bookAdded>Book added</p>";
+
+
+    unset($_SESSION['book_added']);
+}
+?>
     <h1>Add books here</h1>
     <form method="POST" enctype="multipart/form-data" class="form-for-inputs">
-    <label >
+    <label>
             Title
             <input type="text" name="name" value='<?= $_POST["name"] ?? "" ?>' class="form-inputs">
             <?php if(isset($errors["name"])){ ?>
